@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="gestionHotelModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Chambre">
+    <Key>
+      <PropertyRef Name="Id_chambre" />
+    </Key>
+    <Property Name="Id_chambre" Type="Int32" Nullable="false" />
+    <Property Name="Nom_chambre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Numero_chambre" Type="Int32" />
+    <Property Name="Type_chambre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Facture" Relationship="Self.FK__Facture__Id_cham__4BAC3F29" FromRole="Chambre" ToRole="Facture" />
+    <NavigationProperty Name="Service" Relationship="Self.FK__Service__Id_cham__4AB81AF0" FromRole="Chambre" ToRole="Service" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="Id_client" />
+    </Key>
+    <Property Name="Id_client" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Prenom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Adresse" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Genre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Telephone" Type="Int32" />
+    <NavigationProperty Name="Facture" Relationship="Self.FK__Facture__Id_clie__3E52440B" FromRole="Client" ToRole="Facture" />
+  </EntityType>
+  <EntityType Name="Facture">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Montant_total" Type="Int32" />
+    <Property Name="Id_client" Type="Int32" />
+    <Property Name="Id_chambre" Type="Int32" />
+    <Property Name="Id_service" Type="Int32" />
+    <NavigationProperty Name="Chambre" Relationship="Self.FK__Facture__Id_cham__4BAC3F29" FromRole="Facture" ToRole="Chambre" />
+    <NavigationProperty Name="Client" Relationship="Self.FK__Facture__Id_clie__3E52440B" FromRole="Facture" ToRole="Client" />
+    <NavigationProperty Name="Service" Relationship="Self.FK__Facture__Id_serv__403A8C7D" FromRole="Facture" ToRole="Service" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="Id_service" />
+    </Key>
+    <Property Name="Id_service" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom_service" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Prix_unitaire" Type="Int32" />
+    <Property Name="Quantite" Type="Int32" />
+    <Property Name="Total" Type="Int32" />
+    <Property Name="Id_chambre" Type="Int32" />
+    <NavigationProperty Name="Chambre" Relationship="Self.FK__Service__Id_cham__4AB81AF0" FromRole="Service" ToRole="Chambre" />
+    <NavigationProperty Name="Facture" Relationship="Self.FK__Facture__Id_serv__403A8C7D" FromRole="Service" ToRole="Facture" />
+  </EntityType>
+  <Association Name="FK__Facture__Id_cham__4BAC3F29">
+    <End Role="Chambre" Type="Self.Chambre" Multiplicity="0..1" />
+    <End Role="Facture" Type="Self.Facture" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chambre">
+        <PropertyRef Name="Id_chambre" />
+      </Principal>
+      <Dependent Role="Facture">
+        <PropertyRef Name="Id_chambre" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Service__Id_cham__4AB81AF0">
+    <End Role="Chambre" Type="Self.Chambre" Multiplicity="0..1" />
+    <End Role="Service" Type="Self.Service" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chambre">
+        <PropertyRef Name="Id_chambre" />
+      </Principal>
+      <Dependent Role="Service">
+        <PropertyRef Name="Id_chambre" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Facture__Id_clie__3E52440B">
+    <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+    <End Role="Facture" Type="Self.Facture" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="Id_client" />
+      </Principal>
+      <Dependent Role="Facture">
+        <PropertyRef Name="Id_client" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Facture__Id_serv__403A8C7D">
+    <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
+    <End Role="Facture" Type="Self.Facture" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="Id_service" />
+      </Principal>
+      <Dependent Role="Facture">
+        <PropertyRef Name="Id_service" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="gestionHotelEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Chambre" EntityType="Self.Chambre" />
+    <EntitySet Name="Client" EntityType="Self.Client" />
+    <EntitySet Name="Facture" EntityType="Self.Facture" />
+    <EntitySet Name="Service" EntityType="Self.Service" />
+    <AssociationSet Name="FK__Facture__Id_cham__4BAC3F29" Association="Self.FK__Facture__Id_cham__4BAC3F29">
+      <End Role="Chambre" EntitySet="Chambre" />
+      <End Role="Facture" EntitySet="Facture" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Service__Id_cham__4AB81AF0" Association="Self.FK__Service__Id_cham__4AB81AF0">
+      <End Role="Chambre" EntitySet="Chambre" />
+      <End Role="Service" EntitySet="Service" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Facture__Id_clie__3E52440B" Association="Self.FK__Facture__Id_clie__3E52440B">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Facture" EntitySet="Facture" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Facture__Id_serv__403A8C7D" Association="Self.FK__Facture__Id_serv__403A8C7D">
+      <End Role="Service" EntitySet="Service" />
+      <End Role="Facture" EntitySet="Facture" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

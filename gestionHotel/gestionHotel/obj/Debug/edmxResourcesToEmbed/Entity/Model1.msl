@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="gestionHotelModelStoreContainer" CdmEntityContainer="gestionHotelEntities2">
+    <EntitySetMapping Name="Chambre">
+      <EntityTypeMapping TypeName="gestionHotelModel.Chambre">
+        <MappingFragment StoreEntitySet="Chambre">
+          <ScalarProperty Name="Id_chambre" ColumnName="Id_chambre" />
+          <ScalarProperty Name="Nom_chambre" ColumnName="Nom_chambre" />
+          <ScalarProperty Name="Numero_chambre" ColumnName="Numero_chambre" />
+          <ScalarProperty Name="Type_chambre" ColumnName="Type_chambre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Client">
+      <EntityTypeMapping TypeName="gestionHotelModel.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="Id_client" ColumnName="Id_client" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Genre" ColumnName="Genre" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Facture">
+      <EntityTypeMapping TypeName="gestionHotelModel.Facture">
+        <MappingFragment StoreEntitySet="Facture">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Montant_total" ColumnName="Montant_total" />
+          <ScalarProperty Name="Id_client" ColumnName="Id_client" />
+          <ScalarProperty Name="Id_chambre" ColumnName="Id_chambre" />
+          <ScalarProperty Name="Id_service" ColumnName="Id_service" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Service">
+      <EntityTypeMapping TypeName="gestionHotelModel.Service">
+        <MappingFragment StoreEntitySet="Service">
+          <ScalarProperty Name="Id_service" ColumnName="Id_service" />
+          <ScalarProperty Name="Nom_service" ColumnName="Nom_service" />
+          <ScalarProperty Name="Prix_unitaire" ColumnName="Prix_unitaire" />
+          <ScalarProperty Name="Quantite" ColumnName="Quantite" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Id_chambre" ColumnName="Id_chambre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

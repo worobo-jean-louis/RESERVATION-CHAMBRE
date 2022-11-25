@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="gestionHotelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Chambre">
+          <Key>
+            <PropertyRef Name="Id_chambre" />
+          </Key>
+          <Property Name="Id_chambre" Type="int" Nullable="false" />
+          <Property Name="Nom_chambre" Type="varchar" MaxLength="50" />
+          <Property Name="Numero_chambre" Type="int" />
+          <Property Name="Type_chambre" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="Id_client" />
+          </Key>
+          <Property Name="Id_client" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nom" Type="varchar" MaxLength="50" />
+          <Property Name="Prenom" Type="varchar" MaxLength="50" />
+          <Property Name="Adresse" Type="varchar" MaxLength="50" />
+          <Property Name="Genre" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="Telephone" Type="int" />
+        </EntityType>
+        <EntityType Name="Facture">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Montant_total" Type="int" />
+          <Property Name="Id_client" Type="int" />
+          <Property Name="Id_chambre" Type="int" />
+          <Property Name="Id_service" Type="int" />
+        </EntityType>
+        <!--Erreurs détectées durant la génération :
+avertissement 6013: Aucune clé primaire n'est définie pour la table/vue 'C:\USERS\HP\DESKTOP\GESTIONHOTEL\GESTIONHOTEL\GESTIONHOTEL.MDF.dbo.Reservation' ; en outre, aucune clé primaire valide n'a pu être déduite. Cette table/vue a été exclue. Pour utiliser l'entité, vous devez passer en revue votre schéma, ajouter les clés appropriées et supprimer le commentaire associé.
+        <EntityType Name="Reservation">
+          <Property Name="Date_debut_reservation" Type="date" />
+          <Property Name="Date_fin_reservation" Type="date" />
+          <Property Name="Montant" Type="int" />
+          <Property Name="Id_chambre" Type="int" />
+          <Property Name="Id_client" Type="int" />
+        </EntityType>-->
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="Id_service" />
+          </Key>
+          <Property Name="Id_service" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nom_service" Type="varchar" MaxLength="50" />
+          <Property Name="Prix_unitaire" Type="int" />
+          <Property Name="Quantite" Type="int" />
+          <Property Name="Total" Type="int" />
+          <Property Name="Id_chambre" Type="int" />
+        </EntityType>
+        <Association Name="FK__Facture__Id_cham__4BAC3F29">
+          <End Role="Chambre" Type="Self.Chambre" Multiplicity="0..1" />
+          <End Role="Facture" Type="Self.Facture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Chambre">
+              <PropertyRef Name="Id_chambre" />
+            </Principal>
+            <Dependent Role="Facture">
+              <PropertyRef Name="Id_chambre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Facture__Id_clie__3E52440B">
+          <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+          <End Role="Facture" Type="Self.Facture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="Id_client" />
+            </Principal>
+            <Dependent Role="Facture">
+              <PropertyRef Name="Id_client" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Facture__Id_serv__403A8C7D">
+          <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
+          <End Role="Facture" Type="Self.Facture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="Id_service" />
+            </Principal>
+            <Dependent Role="Facture">
+              <PropertyRef Name="Id_service" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--Erreurs détectées durant la génération :
+erreur 6004: La table 'C:\USERS\HP\DESKTOP\GESTIONHOTEL\GESTIONHOTEL\GESTIONHOTEL.MDF.dbo.Reservation' est référencée par une relation, mais elle est introuvable.
+        <Association Name="FK__Reservati__Id_ch__4D94879B" />-->
+        <!--Erreurs détectées durant la génération :
+erreur 6004: La table 'C:\USERS\HP\DESKTOP\GESTIONHOTEL\GESTIONHOTEL\GESTIONHOTEL.MDF.dbo.Reservation' est référencée par une relation, mais elle est introuvable.
+        <Association Name="FK__Reservati__Id_cl__4CA06362" />-->
+        <Association Name="FK__Service__Id_cham__4AB81AF0">
+          <End Role="Chambre" Type="Self.Chambre" Multiplicity="0..1" />
+          <End Role="Service" Type="Self.Service" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Chambre">
+              <PropertyRef Name="Id_chambre" />
+            </Principal>
+            <Dependent Role="Service">
+              <PropertyRef Name="Id_chambre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="gestionHotelModelStoreContainer">
+          <EntitySet Name="Chambre" EntityType="Self.Chambre" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Facture" EntityType="Self.Facture" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Facture__Id_cham__4BAC3F29" Association="Self.FK__Facture__Id_cham__4BAC3F29">
+            <End Role="Chambre" EntitySet="Chambre" />
+            <End Role="Facture" EntitySet="Facture" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Facture__Id_clie__3E52440B" Association="Self.FK__Facture__Id_clie__3E52440B">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Facture" EntitySet="Facture" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Facture__Id_serv__403A8C7D" Association="Self.FK__Facture__Id_serv__403A8C7D">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="Facture" EntitySet="Facture" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Service__Id_cham__4AB81AF0" Association="Self.FK__Service__Id_cham__4AB81AF0">
+            <End Role="Chambre" EntitySet="Chambre" />
+            <End Role="Service" EntitySet="Service" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="gestionHotelModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Chambre">
+          <Key>
+            <PropertyRef Name="Id_chambre" />
+          </Key>
+          <Property Name="Id_chambre" Type="Int32" Nullable="false" />
+          <Property Name="Nom_chambre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Numero_chambre" Type="Int32" />
+          <Property Name="Type_chambre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Facture" Relationship="Self.FK__Facture__Id_cham__4BAC3F29" FromRole="Chambre" ToRole="Facture" />
+          <NavigationProperty Name="Service" Relationship="Self.FK__Service__Id_cham__4AB81AF0" FromRole="Chambre" ToRole="Service" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="Id_client" />
+          </Key>
+          <Property Name="Id_client" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Prenom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Adresse" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Genre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telephone" Type="Int32" />
+          <NavigationProperty Name="Facture" Relationship="Self.FK__Facture__Id_clie__3E52440B" FromRole="Client" ToRole="Facture" />
+        </EntityType>
+        <EntityType Name="Facture">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Montant_total" Type="Int32" />
+          <Property Name="Id_client" Type="Int32" />
+          <Property Name="Id_chambre" Type="Int32" />
+          <Property Name="Id_service" Type="Int32" />
+          <NavigationProperty Name="Chambre" Relationship="Self.FK__Facture__Id_cham__4BAC3F29" FromRole="Facture" ToRole="Chambre" />
+          <NavigationProperty Name="Client" Relationship="Self.FK__Facture__Id_clie__3E52440B" FromRole="Facture" ToRole="Client" />
+          <NavigationProperty Name="Service" Relationship="Self.FK__Facture__Id_serv__403A8C7D" FromRole="Facture" ToRole="Service" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="Id_service" />
+          </Key>
+          <Property Name="Id_service" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nom_service" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Prix_unitaire" Type="Int32" />
+          <Property Name="Quantite" Type="Int32" />
+          <Property Name="Total" Type="Int32" />
+          <Property Name="Id_chambre" Type="Int32" />
+          <NavigationProperty Name="Chambre" Relationship="Self.FK__Service__Id_cham__4AB81AF0" FromRole="Service" ToRole="Chambre" />
+          <NavigationProperty Name="Facture" Relationship="Self.FK__Facture__Id_serv__403A8C7D" FromRole="Service" ToRole="Facture" />
+        </EntityType>
+        <Association Name="FK__Facture__Id_cham__4BAC3F29">
+          <End Role="Chambre" Type="Self.Chambre" Multiplicity="0..1" />
+          <End Role="Facture" Type="Self.Facture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Chambre">
+              <PropertyRef Name="Id_chambre" />
+            </Principal>
+            <Dependent Role="Facture">
+              <PropertyRef Name="Id_chambre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Service__Id_cham__4AB81AF0">
+          <End Role="Chambre" Type="Self.Chambre" Multiplicity="0..1" />
+          <End Role="Service" Type="Self.Service" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Chambre">
+              <PropertyRef Name="Id_chambre" />
+            </Principal>
+            <Dependent Role="Service">
+              <PropertyRef Name="Id_chambre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Facture__Id_clie__3E52440B">
+          <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+          <End Role="Facture" Type="Self.Facture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="Id_client" />
+            </Principal>
+            <Dependent Role="Facture">
+              <PropertyRef Name="Id_client" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Facture__Id_serv__403A8C7D">
+          <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
+          <End Role="Facture" Type="Self.Facture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="Id_service" />
+            </Principal>
+            <Dependent Role="Facture">
+              <PropertyRef Name="Id_service" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="gestionHotelEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Chambre" EntityType="Self.Chambre" />
+          <EntitySet Name="Client" EntityType="Self.Client" />
+          <EntitySet Name="Facture" EntityType="Self.Facture" />
+          <EntitySet Name="Service" EntityType="Self.Service" />
+          <AssociationSet Name="FK__Facture__Id_cham__4BAC3F29" Association="Self.FK__Facture__Id_cham__4BAC3F29">
+            <End Role="Chambre" EntitySet="Chambre" />
+            <End Role="Facture" EntitySet="Facture" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Service__Id_cham__4AB81AF0" Association="Self.FK__Service__Id_cham__4AB81AF0">
+            <End Role="Chambre" EntitySet="Chambre" />
+            <End Role="Service" EntitySet="Service" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Facture__Id_clie__3E52440B" Association="Self.FK__Facture__Id_clie__3E52440B">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Facture" EntitySet="Facture" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Facture__Id_serv__403A8C7D" Association="Self.FK__Facture__Id_serv__403A8C7D">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="Facture" EntitySet="Facture" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="gestionHotelModelStoreContainer" CdmEntityContainer="gestionHotelEntities2">
+          <EntitySetMapping Name="Chambre">
+            <EntityTypeMapping TypeName="gestionHotelModel.Chambre">
+              <MappingFragment StoreEntitySet="Chambre">
+                <ScalarProperty Name="Id_chambre" ColumnName="Id_chambre" />
+                <ScalarProperty Name="Nom_chambre" ColumnName="Nom_chambre" />
+                <ScalarProperty Name="Numero_chambre" ColumnName="Numero_chambre" />
+                <ScalarProperty Name="Type_chambre" ColumnName="Type_chambre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Client">
+            <EntityTypeMapping TypeName="gestionHotelModel.Client">
+              <MappingFragment StoreEntitySet="Client">
+                <ScalarProperty Name="Id_client" ColumnName="Id_client" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+                <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+                <ScalarProperty Name="Genre" ColumnName="Genre" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Facture">
+            <EntityTypeMapping TypeName="gestionHotelModel.Facture">
+              <MappingFragment StoreEntitySet="Facture">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Montant_total" ColumnName="Montant_total" />
+                <ScalarProperty Name="Id_client" ColumnName="Id_client" />
+                <ScalarProperty Name="Id_chambre" ColumnName="Id_chambre" />
+                <ScalarProperty Name="Id_service" ColumnName="Id_service" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Service">
+            <EntityTypeMapping TypeName="gestionHotelModel.Service">
+              <MappingFragment StoreEntitySet="Service">
+                <ScalarProperty Name="Id_service" ColumnName="Id_service" />
+                <ScalarProperty Name="Nom_service" ColumnName="Nom_service" />
+                <ScalarProperty Name="Prix_unitaire" ColumnName="Prix_unitaire" />
+                <ScalarProperty Name="Quantite" ColumnName="Quantite" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Id_chambre" ColumnName="Id_chambre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

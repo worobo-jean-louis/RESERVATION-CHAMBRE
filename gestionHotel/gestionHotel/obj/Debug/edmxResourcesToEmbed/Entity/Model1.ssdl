@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="gestionHotelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Chambre">
+    <Key>
+      <PropertyRef Name="Id_chambre" />
+    </Key>
+    <Property Name="Id_chambre" Type="int" Nullable="false" />
+    <Property Name="Nom_chambre" Type="varchar" MaxLength="50" />
+    <Property Name="Numero_chambre" Type="int" />
+    <Property Name="Type_chambre" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="Id_client" />
+    </Key>
+    <Property Name="Id_client" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom" Type="varchar" MaxLength="50" />
+    <Property Name="Prenom" Type="varchar" MaxLength="50" />
+    <Property Name="Adresse" Type="varchar" MaxLength="50" />
+    <Property Name="Genre" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="Telephone" Type="int" />
+  </EntityType>
+  <EntityType Name="Facture">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Montant_total" Type="int" />
+    <Property Name="Id_client" Type="int" />
+    <Property Name="Id_chambre" Type="int" />
+    <Property Name="Id_service" Type="int" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6013: Aucune clé primaire n'est définie pour la table/vue 'C:\USERS\HP\DESKTOP\GESTIONHOTEL\GESTIONHOTEL\GESTIONHOTEL.MDF.dbo.Reservation' ; en outre, aucune clé primaire valide n'a pu être déduite. Cette table/vue a été exclue. Pour utiliser l'entité, vous devez passer en revue votre schéma, ajouter les clés appropriées et supprimer le commentaire associé.
+        <EntityType Name="Reservation">
+          <Property Name="Date_debut_reservation" Type="date" />
+          <Property Name="Date_fin_reservation" Type="date" />
+          <Property Name="Montant" Type="int" />
+          <Property Name="Id_chambre" Type="int" />
+          <Property Name="Id_client" Type="int" />
+        </EntityType>-->
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="Id_service" />
+    </Key>
+    <Property Name="Id_service" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom_service" Type="varchar" MaxLength="50" />
+    <Property Name="Prix_unitaire" Type="int" />
+    <Property Name="Quantite" Type="int" />
+    <Property Name="Total" Type="int" />
+    <Property Name="Id_chambre" Type="int" />
+  </EntityType>
+  <Association Name="FK__Facture__Id_cham__4BAC3F29">
+    <End Role="Chambre" Type="Self.Chambre" Multiplicity="0..1" />
+    <End Role="Facture" Type="Self.Facture" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chambre">
+        <PropertyRef Name="Id_chambre" />
+      </Principal>
+      <Dependent Role="Facture">
+        <PropertyRef Name="Id_chambre" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Facture__Id_clie__3E52440B">
+    <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+    <End Role="Facture" Type="Self.Facture" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="Id_client" />
+      </Principal>
+      <Dependent Role="Facture">
+        <PropertyRef Name="Id_client" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Facture__Id_serv__403A8C7D">
+    <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
+    <End Role="Facture" Type="Self.Facture" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="Id_service" />
+      </Principal>
+      <Dependent Role="Facture">
+        <PropertyRef Name="Id_service" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Erreurs détectées durant la génération :
+erreur 6004: La table 'C:\USERS\HP\DESKTOP\GESTIONHOTEL\GESTIONHOTEL\GESTIONHOTEL.MDF.dbo.Reservation' est référencée par une relation, mais elle est introuvable.
+        <Association Name="FK__Reservati__Id_ch__4D94879B" />-->
+  <!--Erreurs détectées durant la génération :
+erreur 6004: La table 'C:\USERS\HP\DESKTOP\GESTIONHOTEL\GESTIONHOTEL\GESTIONHOTEL.MDF.dbo.Reservation' est référencée par une relation, mais elle est introuvable.
+        <Association Name="FK__Reservati__Id_cl__4CA06362" />-->
+  <Association Name="FK__Service__Id_cham__4AB81AF0">
+    <End Role="Chambre" Type="Self.Chambre" Multiplicity="0..1" />
+    <End Role="Service" Type="Self.Service" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chambre">
+        <PropertyRef Name="Id_chambre" />
+      </Principal>
+      <Dependent Role="Service">
+        <PropertyRef Name="Id_chambre" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="gestionHotelModelStoreContainer">
+    <EntitySet Name="Chambre" EntityType="Self.Chambre" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Facture" EntityType="Self.Facture" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Facture__Id_cham__4BAC3F29" Association="Self.FK__Facture__Id_cham__4BAC3F29">
+      <End Role="Chambre" EntitySet="Chambre" />
+      <End Role="Facture" EntitySet="Facture" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Facture__Id_clie__3E52440B" Association="Self.FK__Facture__Id_clie__3E52440B">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Facture" EntitySet="Facture" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Facture__Id_serv__403A8C7D" Association="Self.FK__Facture__Id_serv__403A8C7D">
+      <End Role="Service" EntitySet="Service" />
+      <End Role="Facture" EntitySet="Facture" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Service__Id_cham__4AB81AF0" Association="Self.FK__Service__Id_cham__4AB81AF0">
+      <End Role="Chambre" EntitySet="Chambre" />
+      <End Role="Service" EntitySet="Service" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
