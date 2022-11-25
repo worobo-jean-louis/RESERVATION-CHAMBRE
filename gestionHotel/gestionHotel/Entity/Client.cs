@@ -14,12 +14,25 @@ namespace gestionHotel.Entity
     
     public partial class Client
     {
+        private int id;
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Client()
         {
             this.Facture = new HashSet<Facture>();
         }
-    
+
+        public Client(int id, string nom, string prenom, string adresse, string genre, string status, int telephone)
+        {
+            this.id = id;
+            Nom = nom;
+            Prenom = prenom;
+            Adresse = adresse;
+            Genre = genre;
+            Status = status;
+            Telephone = telephone;
+        }
+
         public int Id_client { get; set; }
         public string Nom { get; set; }
         public string Prenom { get; set; }

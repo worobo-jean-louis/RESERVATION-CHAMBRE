@@ -74,6 +74,7 @@
     <Compile Include="Dal\ChambreDal.cs" />
     <Compile Include="Dal\ClientDal.cs" />
     <Compile Include="Dal\ServiceDal.cs" />
+    <Compile Include="DVGPrinter.cs" />
     <Compile Include="Entity\Chambre.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

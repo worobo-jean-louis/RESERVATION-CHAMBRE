@@ -11,6 +11,7 @@ using gestionHotel.Controller;
 using gestionHotel.Entity;
 using gestionHotel.Dal;
 using gestionHotel.Services;
+using System.Data.SqlClient;
 namespace gestionHotel.View
 {
     public partial class FormClient : Form

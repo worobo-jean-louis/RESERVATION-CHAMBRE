@@ -65,6 +65,7 @@
             this.PrintBuilding_btn.TabIndex = 12;
             this.PrintBuilding_btn.Text = "Print";
             this.PrintBuilding_btn.UseVisualStyleBackColor = true;
+            this.PrintBuilding_btn.Click += new System.EventHandler(this.PrintBuilding_btn_Click);
             // 
             // DeleteBuilding_btn
             // 
@@ -76,6 +77,7 @@
             this.DeleteBuilding_btn.TabIndex = 11;
             this.DeleteBuilding_btn.Text = "Delete";
             this.DeleteBuilding_btn.UseVisualStyleBackColor = true;
+           
             // 
             // UpdateBuilding_btn
             // 
@@ -98,6 +100,7 @@
             this.RefreshBuildingList_btn.TabIndex = 9;
             this.RefreshBuildingList_btn.Text = "Refresh";
             this.RefreshBuildingList_btn.UseVisualStyleBackColor = true;
+            this.RefreshBuildingList_btn.Click += new System.EventHandler(this.RefreshBuildingList_btn_Click);
             // 
             // BuildingFilterInput
             // 
@@ -122,7 +125,7 @@
             this.listClients.Name = "listClients";
             this.listClients.Size = new System.Drawing.Size(642, 219);
             this.listClients.TabIndex = 13;
-            // 
+           
             // Id
             // 
             this.Id.HeaderText = "Id";
