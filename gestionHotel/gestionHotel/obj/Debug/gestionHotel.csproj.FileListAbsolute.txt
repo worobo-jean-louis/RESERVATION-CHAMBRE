@@ -38,3 +38,23 @@ E:\2022-2023\gestion hotel\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\obj\Deb
 E:\2022-2023\gestion hotel\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\obj\Debug\gestionHotel.csproj.CopyComplete
 E:\2022-2023\gestion hotel\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\obj\Debug\gestionHotel.exe
 E:\2022-2023\gestion hotel\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\obj\Debug\gestionHotel.pdb
+C:\Users\Nilisofficiel\Documents\github\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\bin\Debug\gestionHotel.mdf
+C:\Users\Nilisofficiel\Documents\github\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\bin\Debug\gestionHotel_log.ldf
+C:\Users\Nilisofficiel\Documents\github\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\bin\Debug\gestionHotel.exe.config
+C:\Users\Nilisofficiel\Documents\github\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\bin\Debug\gestionHotel.exe
+C:\Users\Nilisofficiel\Documents\github\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\bin\Debug\gestionHotel.pdb
+C:\Users\Nilisofficiel\Documents\github\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\bin\Debug\EntityFramework.dll
+C:\Users\Nilisofficiel\Documents\github\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Nilisofficiel\Documents\github\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\bin\Debug\EntityFramework.xml
+C:\Users\Nilisofficiel\Documents\github\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Nilisofficiel\Documents\github\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\Nilisofficiel\Documents\github\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\obj\Debug\gestionHotel.csproj.AssemblyReference.cache
+C:\Users\Nilisofficiel\Documents\github\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\obj\Debug\gestionHotel.csproj.SuggestedBindingRedirects.cache
+C:\Users\Nilisofficiel\Documents\github\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\obj\Debug\gestionHotel.Properties.Resources.resources
+C:\Users\Nilisofficiel\Documents\github\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\obj\Debug\gestionHotel.View.FormClient.resources
+C:\Users\Nilisofficiel\Documents\github\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\obj\Debug\gestionHotel.View.FormListClient.resources
+C:\Users\Nilisofficiel\Documents\github\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\obj\Debug\gestionHotel.csproj.GenerateResource.cache
+C:\Users\Nilisofficiel\Documents\github\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\obj\Debug\gestionHotel.csproj.CoreCompileInputs.cache
+C:\Users\Nilisofficiel\Documents\github\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\obj\Debug\gestionHotel.csproj.CopyComplete
+C:\Users\Nilisofficiel\Documents\github\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\obj\Debug\gestionHotel.exe
+C:\Users\Nilisofficiel\Documents\github\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\obj\Debug\gestionHotel.pdb
