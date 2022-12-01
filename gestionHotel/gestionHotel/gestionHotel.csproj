@@ -54,11 +54,17 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>..\..\..\..\GIT\gestionHotel\packages\Guna.UI2.WinForms.2.0.3.5\lib\net40\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -73,6 +79,8 @@
     <Compile Include="Controller\ClientController.cs" />
     <Compile Include="Dal\ChambreDal.cs" />
     <Compile Include="Dal\ClientDal.cs" />
+    <Compile Include="Dal\facture.cs" />
+    <Compile Include="Dal\FactureDal.cs" />
     <Compile Include="Dal\ServiceDal.cs" />
     <Compile Include="DVGPrinter.cs" />
     <Compile Include="Entity\Chambre.cs">
@@ -117,6 +125,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ChambreService.cs" />
     <Compile Include="Services\ClientService.cs" />
+    <Compile Include="Services\FactureService.cs" />
     <Compile Include="Services\ServicesService.cs" />
     <Compile Include="View\FormClient.cs">
       <SubType>Form</SubType>
@@ -130,6 +139,9 @@
     <Compile Include="View\FormListClient.Designer.cs">
       <DependentUpon>FormListClient.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -196,6 +208,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>gestionHotel.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Sans titre-2-Récupéré.png" />
+    <None Include="Resources\fond_gi3.png" />
     <None Include="Resources\user_30px.png" />
   </ItemGroup>
   <ItemGroup>
