@@ -40,6 +40,7 @@
             // 
             // guna2PictureBox1
             // 
+            this.guna2PictureBox1.BorderRadius = 15;
             this.guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2PictureBox1.Image = global::gestionHotel.Properties.Resources.fond_gi3;
             this.guna2PictureBox1.ImageRotate = 0F;
