@@ -1,0 +1,62 @@
+C:\Users\hp\Desktop\gestionHotel\gestionHotel\bin\Debug\gestionHotel.mdf
+C:\Users\hp\Desktop\gestionHotel\gestionHotel\bin\Debug\gestionHotel_log.ldf
+C:\Users\hp\Desktop\gestionHotel\gestionHotel\bin\Debug\gestionHotel.exe.config
+C:\Users\hp\Desktop\gestionHotel\gestionHotel\bin\Debug\gestionHotel.exe
+C:\Users\hp\Desktop\gestionHotel\gestionHotel\bin\Debug\gestionHotel.pdb
+C:\Users\hp\Desktop\gestionHotel\gestionHotel\bin\Debug\EntityFramework.dll
+C:\Users\hp\Desktop\gestionHotel\gestionHotel\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\hp\Desktop\gestionHotel\gestionHotel\bin\Debug\EntityFramework.xml
+C:\Users\hp\Desktop\gestionHotel\gestionHotel\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hp\Desktop\gestionHotel\gestionHotel\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\hp\Desktop\gestionHotel\gestionHotel\obj\Debug\gestionHotel.csproj.AssemblyReference.cache
+C:\Users\hp\Desktop\gestionHotel\gestionHotel\obj\Debug\gestionHotel.csproj.SuggestedBindingRedirects.cache
+C:\Users\hp\Desktop\gestionHotel\gestionHotel\obj\Debug\gestionHotel.Properties.Resources.resources
+C:\Users\hp\Desktop\gestionHotel\gestionHotel\obj\Debug\gestionHotel.View.FormClient.resources
+C:\Users\hp\Desktop\gestionHotel\gestionHotel\obj\Debug\gestionHotel.csproj.GenerateResource.cache
+C:\Users\hp\Desktop\gestionHotel\gestionHotel\obj\Debug\gestionHotel.csproj.CoreCompileInputs.cache
+C:\Users\hp\Desktop\gestionHotel\gestionHotel\obj\Debug\gestionHotel.csproj.CopyComplete
+C:\Users\hp\Desktop\gestionHotel\gestionHotel\obj\Debug\gestionHotel.exe
+C:\Users\hp\Desktop\gestionHotel\gestionHotel\obj\Debug\gestionHotel.pdb
+C:\Users\hp\Desktop\gestionHotel\gestionHotel\obj\Debug\gestionHotel.View.FormListClient.resources
+E:\2022-2023\gestion hotel\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\bin\Debug\gestionHotel.mdf
+E:\2022-2023\gestion hotel\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\bin\Debug\gestionHotel_log.ldf
+E:\2022-2023\gestion hotel\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\bin\Debug\gestionHotel.exe.config
+E:\2022-2023\gestion hotel\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\bin\Debug\gestionHotel.exe
+E:\2022-2023\gestion hotel\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\bin\Debug\gestionHotel.pdb
+E:\2022-2023\gestion hotel\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\bin\Debug\EntityFramework.dll
+E:\2022-2023\gestion hotel\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\bin\Debug\EntityFramework.SqlServer.dll
+E:\2022-2023\gestion hotel\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\bin\Debug\EntityFramework.xml
+E:\2022-2023\gestion hotel\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\bin\Debug\EntityFramework.SqlServer.xml
+E:\2022-2023\gestion hotel\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\bin\Debug\fr\EntityFramework.resources.dll
+E:\2022-2023\gestion hotel\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\obj\Debug\gestionHotel.csproj.AssemblyReference.cache
+E:\2022-2023\gestion hotel\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\obj\Debug\gestionHotel.csproj.SuggestedBindingRedirects.cache
+E:\2022-2023\gestion hotel\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\obj\Debug\gestionHotel.Properties.Resources.resources
+E:\2022-2023\gestion hotel\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\obj\Debug\gestionHotel.View.FormClient.resources
+E:\2022-2023\gestion hotel\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\obj\Debug\gestionHotel.View.FormListClient.resources
+E:\2022-2023\gestion hotel\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\obj\Debug\gestionHotel.csproj.GenerateResource.cache
+E:\2022-2023\gestion hotel\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\obj\Debug\gestionHotel.csproj.CoreCompileInputs.cache
+E:\2022-2023\gestion hotel\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\obj\Debug\gestionHotel.csproj.CopyComplete
+E:\2022-2023\gestion hotel\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\obj\Debug\gestionHotel.exe
+E:\2022-2023\gestion hotel\RESERVATION-CHAMBRE\gestionHotel\gestionHotel\obj\Debug\gestionHotel.pdb
+C:\Users\hp\Downloads\gestionHotel\gestionHotel\gestionHotel\obj\Debug\gestionHotel.csproj.AssemblyReference.cache
+C:\Users\hp\Downloads\gestionHotel\gestionHotel\gestionHotel\obj\Debug\gestionHotel.csproj.SuggestedBindingRedirects.cache
+C:\Users\hp\Downloads\gestionHotel\gestionHotel\gestionHotel\obj\Debug\gestionHotel.Properties.Resources.resources
+C:\Users\hp\Downloads\gestionHotel\gestionHotel\gestionHotel\obj\Debug\gestionHotel.View.FormClient.resources
+C:\Users\hp\Downloads\gestionHotel\gestionHotel\gestionHotel\obj\Debug\gestionHotel.View.FormListClient.resources
+C:\Users\hp\Downloads\gestionHotel\gestionHotel\gestionHotel\obj\Debug\gestionHotel.csproj.GenerateResource.cache
+C:\Users\hp\Downloads\gestionHotel\gestionHotel\gestionHotel\obj\Debug\gestionHotel.csproj.CoreCompileInputs.cache
+C:\Users\hp\Downloads\gestionHotel\gestionHotel\gestionHotel\obj\Debug\gestionHotel.exe
+C:\Users\hp\Downloads\gestionHotel\gestionHotel\gestionHotel\obj\Debug\gestionHotel.pdb
+C:\Users\hp\Downloads\gestionHotel\gestionHotel\gestionHotel\bin\Debug\gestionHotel.mdf
+C:\Users\hp\Downloads\gestionHotel\gestionHotel\gestionHotel\bin\Debug\gestionHotel_log.ldf
+C:\Users\hp\Downloads\gestionHotel\gestionHotel\gestionHotel\bin\Debug\gestionHotel.exe.config
+C:\Users\hp\Downloads\gestionHotel\gestionHotel\gestionHotel\bin\Debug\gestionHotel.exe
+C:\Users\hp\Downloads\gestionHotel\gestionHotel\gestionHotel\bin\Debug\gestionHotel.pdb
+C:\Users\hp\Downloads\gestionHotel\gestionHotel\gestionHotel\bin\Debug\EntityFramework.dll
+C:\Users\hp\Downloads\gestionHotel\gestionHotel\gestionHotel\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\hp\Downloads\gestionHotel\gestionHotel\gestionHotel\bin\Debug\EntityFramework.xml
+C:\Users\hp\Downloads\gestionHotel\gestionHotel\gestionHotel\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hp\Downloads\gestionHotel\gestionHotel\gestionHotel\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\hp\Downloads\gestionHotel\gestionHotel\gestionHotel\obj\Debug\gestionHotel.csproj.CopyComplete
+C:\Users\hp\Downloads\gestionHotel\gestionHotel\gestionHotel\obj\Debug\gestionHotel.View.FormChambre.resources
+C:\Users\hp\Downloads\gestionHotel\gestionHotel\gestionHotel\obj\Debug\gestionHotel.View.FormListChambre.resources

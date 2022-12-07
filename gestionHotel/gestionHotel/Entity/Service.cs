@@ -30,5 +30,9 @@ namespace gestionHotel.Entity
         public virtual Chambre Chambre { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Facture> Facture { get; set; }
+        public bool IsNull()
+        {
+            return this == null;
+        }
     }
 }
